@@ -15,7 +15,8 @@
   src: url(../fonts/WorkSans-Black.woff2) format('woff2');
 }
 
-html{
+/* Universal Styles */
+body{
 	font-size: 14px;
 	font-family: 'WorkSans',sans-serif;
 	background-color: rgb(255, 242, 242);
@@ -37,8 +38,23 @@ strong{
 	font-family: 'WorkSans-Bold';
 }
 
+/* top margin */
+.row{
+	margin-top: 5.25rem;
+}
+@media (min-width: 992px) {
+	.col-md-3 {
+    margin-top: 5.25rem;
+}}
+
+/* Match Game Cards */
 .card{
 	font-family: 'WorkSans-Black';
 	font-size: 7rem;
 	color: rgb(255, 255, 255);
+	background-color: rgb(32, 64, 86);
+	border-radius: 8px;
+	border: 4px solid #ffffff;
+	height: 12.5rem;
 }
+
