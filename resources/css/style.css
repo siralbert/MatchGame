@@ -58,5 +58,9 @@ strong{
 	border-radius: 8px;
 	border: 4px solid #ffffff;
 	height: 12.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
 }
 
