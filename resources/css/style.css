@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'WorkSans-Light';
+  src: url(../fonts/WorkSans-Light.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'WorkSans';
+  src: url(../fonts/WorkSans.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'WorkSans-Bold';
+  src: url(../fonts/WorkSans-Bold.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'WorkSans-Black';
+  src: url(../fonts/WorkSans-Black.woff2) format('woff2');
+}
+
+html{
+	font-size: 14px;
+	font-family: 'WorkSans',sans-serif;
+	background-color: rgb(255, 242, 242);
+	color: rgb(74, 74, 74);
+}
+
+p{
+	font-family: 'WorkSans';
+}
+
+h1{
+	font-family: 'WorkSans-Bold';
+	font-size: 2.5rem;
+	color: rgb(32, 64, 86);
+}
+
+strong{
+	font-size: 1rem;
+	font-family: 'WorkSans-Bold';
+}
+
+.card{
+	font-family: 'WorkSans-Black';
+	font-size: 7rem;
+	color: rgb(255, 255, 255);
+}
