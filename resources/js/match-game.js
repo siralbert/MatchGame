@@ -2,6 +2,12 @@ var MatchGame = {};
 
 // Waits for document to load before running main function
 $(document).ready(function() {
+	var $game = $('#game');
+	var values = MatchGame.generateCardValues();
+	console.log(values);
+	
+//  MatchGame.renderCards(values, $game);
+	
 });
 
 MatchGame.generateCardValues = function () {
@@ -27,13 +33,57 @@ MatchGame.generateCardValues = function () {
   Converts card values to jQuery card objects and adds them to the supplied game
   object.
 */
-MatchGame.renderCards = function() {};
+MatchGame.renderCards = function(cardValues, $game) {
+	  var colors = [
+    'hsl(25, 85%, 65%)',
+    'hsl(55, 85%, 65%)',
+    'hsl(90, 85%, 65%)',
+    'hsl(160, 85%, 65%)',
+    'hsl(220, 85%, 65%)',
+    'hsl(265, 85%, 65%)',
+    'hsl(310, 85%, 65%)',
+    'hsl(360, 85%, 65%)'];
+
+  $game.empty();
+  $game.data('flippedCards', []); //??Lookat
+	
+	/* Initialize MatchGame board and attach data objects to each $cardElement */
+	for (var valueIndex = 0; valueIndex < cardValues.length; valueIndex++) {
+		
+		// Initialize randomized value, color, and data of card objects
+    var value = cardValues[valueIndex];
+    var color = colors[value - 1];
+    var data = {
+      value: value,
+      color: color,
+      isFlipped: false
+    };
+
+		// base html code for a card
+    var $cardElement = $('<div class="col-xs-3 card"></div>');
+		// attach data object to $cardElement
+    $cardElement.data(data);
+
+		// append $cardelement to game div  ?? row??
+    $game.append($cardElement);
+  }
+	
+	// Select card class.  Execute click event handler which calls the MatchGame.flipCard function
+	$('.card').click(function() {
+    MatchGame.flipCard($(this), $('#game'));
+  });
+	
+};
+
+
 
 /*
   Flips over a given card and checks to see if two cards are flipped over.
   Updates styles on flipped cards depending whether they are a match or not.
  */
-MatchGame.flipCard = function () {};
+MatchGame.flipCard = function ($card, $game) {};
+
+
 
 /*
 getRandomInt = function (min, max) {
